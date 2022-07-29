@@ -1,4 +1,4 @@
-
+#extract data healthdashboard
 library(stringr)
 library(tibble)
 library(dplyr)
@@ -24,6 +24,6 @@ get_api_data <- function(geo_level, metric, token){
   return(output_df)
 }
 
-#example, with binge drinking (city-level):
+#example, with binge drinking (tract-level):
 leadd<- get_api_data(geo_level = "tract", metric = "housing-with-potential-lead-risk", token = "")
-leadd
+write.csv(leadd,"C:/Users/Geosciences/Desktop/ChildTract.csv" )
